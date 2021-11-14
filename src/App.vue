@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    
+    <Todos v-bind:todos="todos"/>
   </div>
 </template>
 
 <script>
-
+import Todos from "./components/Todos"
 
 export default {
-  name: 'App',
+  name: 'app',
+  components:{
+    Todos
+  },
   data(){
     return{
       todos: [
@@ -41,7 +44,7 @@ export default {
           title:"Finish Work",
           completed: false
 
-        },
+        }
       ],
     }
   },
