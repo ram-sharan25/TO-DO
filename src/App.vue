@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Todos v-bind:todos="todos"/>
+    <AppTodo v-on:add-todo="appTodo"/>
   </div>
 </template>
 
 <script>
 import Todos from "./components/Todos"
+import AddTodo from "./components/AddTodo"
 
 export default {
   name: 'app',
   components:{
-    Todos
+    Todos,
+    AppTodo
   },
   data(){
     return{
@@ -48,6 +51,11 @@ export default {
       ],
     }
   },
+
+methods :{
+  addTodo(newTodoObj){
+    this.todos=[...this.todos,newTodoObj];
+  }
 }
 </script>
 
